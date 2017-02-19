@@ -1,0 +1,20 @@
+#Problem Set 2 Problem One Bond
+#Data
+using DataFrames
+using DataArrays
+using QuantEcon: gridmake!
+using QuantEcon: fix
+using QuantEcon: ckron
+
+cd("$(homedir())/Desktop/School/Econ 647 - Applied Computational/Problem Sets/PS2/Data")
+pwd()
+df = readtable("Data_2.csv")
+
+#Time Values
+t_list = [0.25, 0.5, 1.0, 2.0, 3.0, 5.0, 7.0, 10.0, 30.0]
+
+#Setup R matrix
+r_matrix = convert(DataArray, df[:2:10])
+
+#Set R values to first row
+r_list = r_matrix[1,1:9]
